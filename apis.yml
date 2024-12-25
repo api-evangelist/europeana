@@ -47,11 +47,6 @@ common:
     type: Getting Started
 created: 2023/11/23
 modified: '2024-11-14'
-overlays:
-  - url: overlays/apis-io-search.yml
-    type: APIs.io Search
-  - url: overlays/apis-io-search.yml
-    type: API Evangelist Ratings
 description: >-
   Europeana empowers the cultural heritage sector in its digital
   transformation.  We develop expertise, tools and policies to embrace digital
