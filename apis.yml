@@ -7,9 +7,6 @@ apis:
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.example.com
     humanURL: https://pro.europeana.eu/page/intro#intro
-    overlays:
-      - url: overlays/https://api.europeana.eu/api/api-docs-openapi-search.yml
-        type: APIs.io Search
     properties:
       - url: https://pro.europeana.eu/page/api-rest-console
         type: Documentation
