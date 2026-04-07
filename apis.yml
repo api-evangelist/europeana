@@ -1,12 +1,10 @@
 aid: europeana
-url: 
-  https://raw.githubusercontent.com/apis-json/artisanal/main/apis/europeana.yml
+url: https://raw.githubusercontent.com/apis-json/artisanal/main/apis/europeana.yml
 apis:
   - aid: europeana:europeana-search-and-record-api
     name: Europeana Search and Record API
     tags: []
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.example.com
     humanURL: https://pro.europeana.eu/page/intro#intro
     overlays:
@@ -25,11 +23,10 @@ apis:
       3,500 cultural institutions across Europe.
 name: Europeana
 tags:
-  - Museums
   - Cultural Heritage
+  - Museums
 type: Contract
-image: 
-  https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
   - url: https://pro.europeana.eu/
