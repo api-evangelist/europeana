@@ -1,0 +1,199 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Europeana Search and Record API
+  description: The Europeana REST API gives programmatic access to over 50 million cultural heritage items, including books,
+    paintings, films, museum objects, and archival records aggregated from more than 3,500 institutions across Europe. The
+    Search API discovers records, and the Record API returns the full metadata for a specific item.
+  tags:
+  - Europeana
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: europeana
+    baseUri: https://api.europeana.eu/record/v2
+    description: Europeana Search and Record API HTTP API.
+    authentication:
+      type: apikey
+      in: query
+      name: wskey
+      value: '{{EUROPEANA_TOKEN}}'
+    resources:
+    - name: search-json
+      path: /search.json
+      operations:
+      - name: searchrecords
+        method: GET
+        description: Search records
+        inputParameters:
+        - name: query
+          in: query
+          type: string
+          required: true
+          description: Search query string.
+        - name: qf
+          in: query
+          type: array
+          description: Query refinement filter (repeatable).
+        - name: rows
+          in: query
+          type: integer
+          description: Number of records to return (max 100).
+        - name: start
+          in: query
+          type: integer
+        - name: profile
+          in: query
+          type: string
+          description: Response profile (minimal, standard, rich, facets).
+        - name: media
+          in: query
+          type: boolean
+        - name: thumbnail
+          in: query
+          type: boolean
+        - name: reusability
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: datasetid-localid-json
+      path: /{datasetId}/{localId}.json
+      operations:
+      - name: getrecord
+        method: GET
+        description: Get record
+        inputParameters:
+        - name: datasetId
+          in: path
+          type: string
+          required: true
+          description: Dataset identifier (collection prefix).
+        - name: localId
+          in: path
+          type: string
+          required: true
+          description: Local identifier within the dataset.
+        - name: profile
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: europeana-rest
+    description: REST adapter for Europeana Search and Record API.
+    resources:
+    - path: /search.json
+      name: searchrecords
+      operations:
+      - method: GET
+        name: searchrecords
+        description: Search records
+        call: europeana.searchrecords
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /{datasetId}/{localId}.json
+      name: getrecord
+      operations:
+      - method: GET
+        name: getrecord
+        description: Get record
+        call: europeana.getrecord
+        with:
+          datasetId: rest.datasetId
+          localId: rest.localId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: europeana-mcp
+    transport: http
+    description: MCP adapter for Europeana Search and Record API for AI agent use.
+    tools:
+    - name: searchrecords
+      description: Search records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: europeana.searchrecords
+      with:
+        query: tools.query
+        qf: tools.qf
+        rows: tools.rows
+        start: tools.start
+        profile: tools.profile
+        media: tools.media
+        thumbnail: tools.thumbnail
+        reusability: tools.reusability
+      inputParameters:
+      - name: query
+        type: string
+        description: Search query string.
+        required: true
+      - name: qf
+        type: array
+        description: Query refinement filter (repeatable).
+      - name: rows
+        type: integer
+        description: Number of records to return (max 100).
+      - name: start
+        type: integer
+        description: start
+      - name: profile
+        type: string
+        description: Response profile (minimal, standard, rich, facets).
+      - name: media
+        type: boolean
+        description: media
+      - name: thumbnail
+        type: boolean
+        description: thumbnail
+      - name: reusability
+        type: string
+        description: reusability
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrecord
+      description: Get record
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: europeana.getrecord
+      with:
+        datasetId: tools.datasetId
+        localId: tools.localId
+        profile: tools.profile
+      inputParameters:
+      - name: datasetId
+        type: string
+        description: Dataset identifier (collection prefix).
+        required: true
+      - name: localId
+        type: string
+        description: Local identifier within the dataset.
+        required: true
+      - name: profile
+        type: string
+        description: profile
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    EUROPEANA_TOKEN: EUROPEANA_TOKEN
