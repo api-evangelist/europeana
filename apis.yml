@@ -58,17 +58,17 @@ common:
   - url: https://pro.europeana.eu/page/events
     type: Events
   - url: https://www.europeana.eu/en/rights
-    type: Terms of Service
+    type: TermsOfService
   - url: https://www.europeana.eu/en/rights/privacy-policy
-    type: Privacy Policy
+    type: PrivacyPolicy
   - url: https://pro.europeana.eu/about-us/office-employees
     type: Contact
   - url: https://pro.europeana.eu/page/api-libraries-and-plugins
     type: Libraries
   - url: https://github.com/europeana/api2/releases/
-    type: Change Log
+    type: ChangeLog
   - url: https://pro.europeana.eu/page/record#get-started
-    type: Getting Started
+    type: GettingStarted
   - url: https://pro.europeana.eu/pages/get-api
     type: SignUp
 maintainers:
