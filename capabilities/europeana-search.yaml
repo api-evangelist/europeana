@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Europeana Search and Record API — Search
+  description: 'Europeana Search and Record API — Search. 1 operations. Lead operation: Search records. Self-contained Naftiko
+    capability covering one Europeana business surface.'
+  tags:
+  - Europeana
+  - Search
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    EUROPEANA_API_KEY: EUROPEANA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: europeana-search
+    baseUri: https://api.europeana.eu/record/v2
+    description: Europeana Search and Record API — Search business capability. Self-contained, no shared references.
+    resources:
+    - name: search.json
+      path: /search.json
+      operations:
+      - name: searchrecords
+        method: GET
+        description: Search records
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: query
+          in: query
+          type: string
+          description: Search query string.
+          required: true
+        - name: qf
+          in: query
+          type: array
+          description: Query refinement filter (repeatable).
+        - name: rows
+          in: query
+          type: integer
+          description: Number of records to return (max 100).
+        - name: start
+          in: query
+          type: integer
+        - name: profile
+          in: query
+          type: string
+          description: Response profile (minimal, standard, rich, facets).
+        - name: media
+          in: query
+          type: boolean
+        - name: thumbnail
+          in: query
+          type: boolean
+        - name: reusability
+          in: query
+          type: string
+    authentication:
+      type: apikey
+      key: wskey
+      value: '{{env.EUROPEANA_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: europeana-search-rest
+    port: 8080
+    description: REST adapter for Europeana Search and Record API — Search. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/search-json
+      name: search-json
+      description: REST surface for search.json.
+      operations:
+      - method: GET
+        name: searchrecords
+        description: Search records
+        call: europeana-search.searchrecords
+        with:
+          query: rest.query
+          qf: rest.qf
+          rows: rest.rows
+          start: rest.start
+          profile: rest.profile
+          media: rest.media
+          thumbnail: rest.thumbnail
+          reusability: rest.reusability
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: europeana-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Europeana Search and Record API — Search. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: search-records
+      description: Search records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: europeana-search.searchrecords
+      with:
+        query: tools.query
+        qf: tools.qf
+        rows: tools.rows
+        start: tools.start
+        profile: tools.profile
+        media: tools.media
+        thumbnail: tools.thumbnail
+        reusability: tools.reusability
+      outputParameters:
+      - type: object
+        mapping: $.
