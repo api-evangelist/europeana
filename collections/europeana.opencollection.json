@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Europeana Search and Record API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "wskey",
+      "value": "{{wskey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.europeana.eu/record/v2/search.json",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search query string."
+              },
+              {
+                "name": "qf",
+                "value": "",
+                "type": "query",
+                "description": "Query refinement filter (repeatable)."
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return (max 100)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query",
+                "description": "Response profile (minimal, standard, rich, facets)."
+              },
+              {
+                "name": "media",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reusability",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search the Europeana collection using keyword, facet, and filter parameters."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Record",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.europeana.eu/record/v2/:datasetId/:localId.json",
+            "params": [
+              {
+                "name": "datasetId",
+                "value": "",
+                "type": "path",
+                "description": "Dataset identifier (collection prefix)."
+              },
+              {
+                "name": "localId",
+                "value": "",
+                "type": "path",
+                "description": "Local identifier within the dataset."
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the full metadata record for a Europeana object."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

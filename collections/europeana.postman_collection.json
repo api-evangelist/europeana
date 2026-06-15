@@ -1,0 +1,452 @@
+{
+  "item": [
+    {
+      "id": "5e39aa34-0c8d-4047-91fd-9a1acc76d523",
+      "name": "Search",
+      "description": {
+        "content": "Discover records via keyword, faceted, and filtered search",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "06fab53c-f1ab-4f1a-b7a6-b3f8c5d2c88c",
+          "name": "Search records",
+          "request": {
+            "name": "Search records",
+            "description": {
+              "content": "Search the Europeana collection using keyword, facet, and filter parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Search query string."
+                },
+                {
+                  "disabled": false,
+                  "key": "qf",
+                  "value": "<string>",
+                  "description": "Query refinement filter (repeatable)."
+                },
+                {
+                  "disabled": false,
+                  "key": "qf",
+                  "value": "<string>",
+                  "description": "Query refinement filter (repeatable)."
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "12",
+                  "description": "Number of records to return (max 100)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "profile",
+                  "value": "<string>",
+                  "description": "Response profile (minimal, standard, rich, facets)."
+                },
+                {
+                  "disabled": false,
+                  "key": "media",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reusability",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d46277f5-2c61-45ec-9e48-769d57945be1",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "mona lisa"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "12"
+                    },
+                    {
+                      "key": "start",
+                      "value": "1"
+                    },
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "media",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reusability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"itemsCount\": 3725,\n  \"totalResults\": 7410\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4903406d-edae-46c6-a9ff-67579eca6315",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "mona lisa"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "12"
+                    },
+                    {
+                      "key": "start",
+                      "value": "1"
+                    },
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "media",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reusability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bf23c62d-f134-4ce6-b789-ce5db7704344",
+      "name": "Record",
+      "description": {
+        "content": "Retrieve full metadata for a single record",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "241a90eb-b011-47e5-bc2b-3a264c893001",
+          "name": "Get record",
+          "request": {
+            "name": "Get record",
+            "description": {
+              "content": "Returns the full metadata record for a Europeana object.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":datasetId",
+                "{{localId}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "profile",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) Dataset identifier (collection prefix)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "86fa6130-7b98-49d0-a6de-fa0ac4a95a0d",
+              "name": "Record response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":datasetId",
+                    "{{localId}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "datasetId",
+                      "description": "(Required) Dataset identifier (collection prefix)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"object\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4852e28-8300-4f60-8362-d491cf5dce01",
+              "name": "Record not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":datasetId",
+                    "{{localId}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "datasetId",
+                      "description": "(Required) Dataset identifier (collection prefix)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.europeana.eu/record/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Local identifier within the dataset.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "localId"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "wskey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "48ad1217-4060-4d9d-9fde-27f3e0f8866b",
+    "name": "Europeana Search and Record API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Europeana REST API gives programmatic access to over 50 million cultural heritage items, including books, paintings, films, museum objects, and archival records aggregated from more than 3,500 institutions across Europe. The Search API discovers records, and the Record API returns the full metadata for a specific item.\n\nContact Support:\n Name: Europeana Pro",
+      "type": "text/plain"
+    }
+  }
+}
