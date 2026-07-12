@@ -47,6 +47,10 @@ apis:
       - url: openapi/europeana-openapi.yml
         type: OpenAPI
 common:
+  - type: DomainSecurity
+    url: security/europeana-domain-security.yml
+  - type: Authentication
+    url: authentication/europeana-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/europeana
   - url: https://pro.europeana.eu/
