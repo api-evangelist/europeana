@@ -47,6 +47,8 @@ apis:
       - url: openapi/europeana-openapi.yml
         type: OpenAPI
 common:
+  - type: AgenticAccess
+    url: agentic-access/europeana-agentic-access.yml
   - type: DomainSecurity
     url: security/europeana-domain-security.yml
   - type: Authentication
