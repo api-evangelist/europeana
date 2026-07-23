@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Europeana Search and Record API
+  description: The Europeana REST API gives programmatic access to over 50 million cultural heritage items, including books, paintings, films, museum objects, and archival records aggregated from more than 3,500 institutions across Europe. The Search API discovers records, and the Record API returns the full metadata for a specific item.
+  version: '2.0'
+  contact:
+    name: Europeana Pro
+    url: https://pro.europeana.eu/page/apis
+  license:
+    name: EUPL 1.2
+    url: https://eupl.eu/1.2/en/
+  termsOfService: https://www.europeana.eu/en/rights
+servers:
+- url: https://api.europeana.eu/record/v2
+  description: Europeana Record/Search v2 API
+security:
+- apiKeyAuth: []
+tags:
+- name: Record
+  description: Retrieve full metadata for a single record
+paths:
+  /{datasetId}/{localId}.json:
+    get:
+      summary: Get record
+      description: Returns the full metadata record for a Europeana object.
+      operationId: getRecord
+      tags:
+      - Record
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        description: Dataset identifier (collection prefix).
+        schema:
+          type: string
+      - name: localId
+        in: path
+        required: true
+        description: Local identifier within the dataset.
+        schema:
+          type: string
+      - name: profile
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - params
+          - similar
+      responses:
+        '200':
+          description: Record response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordResponse'
+        '404':
+          description: Record not found
+components:
+  schemas:
+    RecordResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        object:
+          type: object
+          description: Full EDM (Europeana Data Model) metadata object.
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: wskey
+      description: Europeana API key. Register at https://pro.europeana.eu/pages/get-api.
