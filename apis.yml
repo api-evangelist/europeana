@@ -7,7 +7,20 @@ description: >-
   for over 50 million digitized items from more than 3,500 cultural institutions across Europe and exposes them through
   public APIs.
 url: https://raw.githubusercontent.com/api-evangelist/europeana/refs/heads/main/apis.yml
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/europeana.png
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -22,30 +35,42 @@ tags:
   - Museums
   - Search
 apis:
-  - aid: europeana:europeana-search-and-record-api
-    name: Europeana Search and Record API
-    description: >-
-      The Europeana Search and Record API exposes the federated catalog of over 50 million cultural heritage items
-      aggregated from European museums, libraries, archives, and audiovisual collections. The Search endpoint supports
-      keyword, facet, and filter queries; the Record endpoint returns the full EDM metadata for a single object.
-    humanURL: https://pro.europeana.eu/page/intro
-    baseURL: https://api.europeana.eu/record/v2
-    tags:
-      - Cultural Heritage
-      - Museums
-      - Search
-      - Records
-    properties:
-      - url: https://pro.europeana.eu/page/apis
-        type: Documentation
-      - url: https://pro.europeana.eu/page/api-rest-console
-        type: Console
-      - url: https://pro.europeana.eu/pages/get-api
-        type: Signup
-      - url: https://github.com/europeana/api2
-        type: SourceCode
-      - url: openapi/europeana-openapi.yml
-        type: OpenAPI
+- aid: europeana:europeana-record-api
+  name: Europeana Record API
+  description: Retrieve full metadata for a single record
+  humanURL: https://pro.europeana.eu/page/intro
+  baseURL: https://api.europeana.eu/record/v2
+  tags:
+  - Record
+  properties:
+  - type: OpenAPI
+    url: openapi/europeana-record-api-openapi.yml
+  - type: Documentation
+    url: https://pro.europeana.eu/page/apis
+  - type: Console
+    url: https://pro.europeana.eu/page/api-rest-console
+  - type: Signup
+    url: https://pro.europeana.eu/pages/get-api
+  - type: SourceCode
+    url: https://github.com/europeana/api2
+- aid: europeana:europeana-search-api
+  name: Europeana Search API
+  description: Discover records via keyword, faceted, and filtered search
+  humanURL: https://pro.europeana.eu/page/intro
+  baseURL: https://api.europeana.eu/record/v2
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/europeana-search-api-openapi.yml
+  - type: Documentation
+    url: https://pro.europeana.eu/page/apis
+  - type: Console
+    url: https://pro.europeana.eu/page/api-rest-console
+  - type: Signup
+    url: https://pro.europeana.eu/pages/get-api
+  - type: SourceCode
+    url: https://github.com/europeana/api2
 common:
   - type: AgenticAccess
     url: agentic-access/europeana-agentic-access.yml
