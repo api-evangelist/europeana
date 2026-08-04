@@ -1,0 +1,16 @@
+{
+  "provider": "europeana",
+  "sources": [
+    "europeana-record-api-openapi.yml",
+    "europeana-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "europeana-record-api-openapi.yml",
+    "europeana-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

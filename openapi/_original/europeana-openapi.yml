@@ -1,0 +1,164 @@
+openapi: 3.0.3
+info:
+  title: Europeana Search and Record API
+  description: >-
+    The Europeana REST API gives programmatic access to over 50 million cultural
+    heritage items, including books, paintings, films, museum objects, and
+    archival records aggregated from more than 3,500 institutions across Europe.
+    The Search API discovers records, and the Record API returns the full
+    metadata for a specific item.
+  version: "2.0"
+  contact:
+    name: Europeana Pro
+    url: https://pro.europeana.eu/page/apis
+  license:
+    name: EUPL 1.2
+    url: https://eupl.eu/1.2/en/
+  termsOfService: https://www.europeana.eu/en/rights
+servers:
+  - url: https://api.europeana.eu/record/v2
+    description: Europeana Record/Search v2 API
+security:
+  - apiKeyAuth: []
+tags:
+  - name: Search
+    description: Discover records via keyword, faceted, and filtered search
+  - name: Record
+    description: Retrieve full metadata for a single record
+paths:
+  /search.json:
+    get:
+      summary: Search records
+      description: Search the Europeana collection using keyword, facet, and filter parameters.
+      operationId: searchRecords
+      tags:
+        - Search
+      parameters:
+        - name: query
+          in: query
+          required: true
+          description: Search query string.
+          schema:
+            type: string
+            example: "mona lisa"
+        - name: qf
+          in: query
+          required: false
+          description: Query refinement filter (repeatable).
+          schema:
+            type: array
+            items:
+              type: string
+        - name: rows
+          in: query
+          required: false
+          description: Number of records to return (max 100).
+          schema:
+            type: integer
+            default: 12
+        - name: start
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+        - name: profile
+          in: query
+          required: false
+          description: Response profile (minimal, standard, rich, facets).
+          schema:
+            type: string
+            enum: [minimal, standard, rich, facets, portal]
+        - name: media
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: thumbnail
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: reusability
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [open, restricted, permission]
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResponse"
+        "401":
+          description: Missing or invalid API key
+  /{datasetId}/{localId}.json:
+    get:
+      summary: Get record
+      description: Returns the full metadata record for a Europeana object.
+      operationId: getRecord
+      tags:
+        - Record
+      parameters:
+        - name: datasetId
+          in: path
+          required: true
+          description: Dataset identifier (collection prefix).
+          schema:
+            type: string
+        - name: localId
+          in: path
+          required: true
+          description: Local identifier within the dataset.
+          schema:
+            type: string
+        - name: profile
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [params, similar]
+      responses:
+        "200":
+          description: Record response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecordResponse"
+        "404":
+          description: Record not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: wskey
+      description: Europeana API key. Register at https://pro.europeana.eu/pages/get-api.
+  schemas:
+    SearchResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        itemsCount:
+          type: integer
+        totalResults:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+        facets:
+          type: array
+          items:
+            type: object
+    RecordResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        object:
+          type: object
+          description: Full EDM (Europeana Data Model) metadata object.
