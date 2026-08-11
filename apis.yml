@@ -72,6 +72,11 @@ apis:
   - type: SourceCode
     url: https://github.com/europeana/api2
 common:
+  - type: IssueTracker
+    url: https://github.com/europeana/api2/issues
+  - type: License
+    name: EUPL-1.2
+    url: https://github.com/europeana/api2/blob/develop/LICENSE
   - type: AgenticAccess
     url: agentic-access/europeana-agentic-access.yml
   - type: DomainSecurity
