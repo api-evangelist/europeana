@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "85dab58c-c6ec-4a4d-8ded-ce59386bdfd6",
+      "name": "Record",
+      "description": {
+        "content": "Retrieve full metadata for a single record",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1cd4893-e40d-463b-95f8-d6579b1b61d1",
+          "name": "Get record",
+          "request": {
+            "name": "Get record",
+            "description": {
+              "content": "Returns the full metadata record for a Europeana object.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":datasetId",
+                "{{localId}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "profile",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "datasetId",
+                  "description": "(Required) Dataset identifier (collection prefix)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b3eca0e-cf4c-4704-92d3-5cbb0a03e008",
+              "name": "Record response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":datasetId",
+                    "{{localId}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "datasetId",
+                      "description": "(Required) Dataset identifier (collection prefix)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"object\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73abad9f-f5c7-4f2d-b02f-c512ab8d28fc",
+              "name": "Record not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":datasetId",
+                    "{{localId}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "datasetId",
+                      "description": "(Required) Dataset identifier (collection prefix)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.europeana.eu/record/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Local identifier within the dataset.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "localId"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "wskey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d7535c3-b6a7-457d-9098-fdc27a8ed168",
+    "name": "Europeana Search and Record API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Europeana REST API gives programmatic access to over 50 million cultural heritage items, including books, paintings, films, museum objects, and archival records aggregated from more than 3,500 institutions across Europe. The Search API discovers records, and the Record API returns the full metadata for a specific item.\n\nContact Support:\n Name: Europeana Pro",
+      "type": "text/plain"
+    }
+  }
+}

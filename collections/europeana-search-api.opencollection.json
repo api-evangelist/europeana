@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Europeana and Record Search API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "wskey",
+      "value": "{{wskey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.europeana.eu/record/v2/search.json",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search query string."
+              },
+              {
+                "name": "qf",
+                "value": "",
+                "type": "query",
+                "description": "Query refinement filter (repeatable)."
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return (max 100)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query",
+                "description": "Response profile (minimal, standard, rich, facets)."
+              },
+              {
+                "name": "media",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reusability",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search the Europeana collection using keyword, facet, and filter parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

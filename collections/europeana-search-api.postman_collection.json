@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "83a6c6c9-45e5-45ec-a98f-a9b91b759e91",
+      "name": "Search",
+      "description": {
+        "content": "Discover records via keyword, faceted, and filtered search",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "463580d3-bfc6-42cf-8d03-1bb6d2eb0258",
+          "name": "Search records",
+          "request": {
+            "name": "Search records",
+            "description": {
+              "content": "Search the Europeana collection using keyword, facet, and filter parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Search query string."
+                },
+                {
+                  "disabled": false,
+                  "key": "qf",
+                  "value": "<string>",
+                  "description": "Query refinement filter (repeatable)."
+                },
+                {
+                  "disabled": false,
+                  "key": "qf",
+                  "value": "<string>",
+                  "description": "Query refinement filter (repeatable)."
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "12",
+                  "description": "Number of records to return (max 100)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "profile",
+                  "value": "<string>",
+                  "description": "Response profile (minimal, standard, rich, facets)."
+                },
+                {
+                  "disabled": false,
+                  "key": "media",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reusability",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92969476-67e5-4ec6-8e18-c4119aa2d4f7",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "mona lisa"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "12"
+                    },
+                    {
+                      "key": "start",
+                      "value": "1"
+                    },
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "media",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reusability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"itemsCount\": 7329,\n  \"totalResults\": 7577\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54b20a6f-8be5-4b1a-b5de-e200bcc644d8",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "mona lisa"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "qf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "12"
+                    },
+                    {
+                      "key": "start",
+                      "value": "1"
+                    },
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "media",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reusability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wskey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.europeana.eu/record/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "wskey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c4b5d5fd-de77-4480-8e30-0b4097228943",
+    "name": "Europeana and Record Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Europeana REST API gives programmatic access to over 50 million cultural heritage items, including books, paintings, films, museum objects, and archival records aggregated from more than 3,500 institutions across Europe. The Search API discovers records, and the Record API returns the full metadata for a specific item.\n\nContact Support:\n Name: Europeana Pro",
+      "type": "text/plain"
+    }
+  }
+}
