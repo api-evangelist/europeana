@@ -1,11 +1,10 @@
 aid: europeana
 name: Europeana
-description: >-
-  Europeana empowers the cultural heritage sector in its digital transformation. It develops expertise, tools, and
-  policies to embrace digital change and encourage partnerships that foster innovation, making it easier for people to
-  use cultural heritage for education, research, creation, and recreation. The Europeana platform aggregates metadata
-  for over 50 million digitized items from more than 3,500 cultural institutions across Europe and exposes them through
-  public APIs.
+description: Europeana empowers the cultural heritage sector in its digital transformation. It develops
+  expertise, tools, and policies to embrace digital change and encourage partnerships that foster innovation,
+  making it easier for people to use cultural heritage for education, research, creation, and recreation.
+  The Europeana platform aggregates metadata for over 50 million digitized items from more than 3,500
+  cultural institutions across Europe and exposes them through public APIs.
 url: https://raw.githubusercontent.com/api-evangelist/europeana/refs/heads/main/apis.yml
 deliveryModel:
   model: open-core
@@ -40,15 +39,15 @@ type: Index
 position: Consuming
 access: 3rd-Party
 created: '2023-11-23'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 tags:
-  - Archives
-  - Cultural Heritage
-  - Europe
-  - Libraries
-  - Museums
-  - Search
+- Archives
+- Cultural Heritage
+- Europe
+- Libraries
+- Museums
+- Search
 apis:
 - aid: europeana:europeana-record-api
   name: Europeana Record API
@@ -87,39 +86,41 @@ apis:
   - type: SourceCode
     url: https://github.com/europeana/api2
 common:
-  - type: IssueTracker
-    url: https://github.com/europeana/api2/issues
-  - type: License
-    name: EUPL-1.2
-    url: https://github.com/europeana/api2/blob/develop/LICENSE
-  - type: AgenticAccess
-    url: agentic-access/europeana-agentic-access.yml
-  - type: DomainSecurity
-    url: security/europeana-domain-security.yml
-  - type: Authentication
-    url: authentication/europeana-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/europeana
-  - url: https://pro.europeana.eu/
-    type: Portal
-  - url: https://pro.europeana.eu/page/news
-    type: News
-  - url: https://pro.europeana.eu/page/events
-    type: Events
-  - url: https://www.europeana.eu/en/rights
-    type: TermsOfService
-  - url: https://www.europeana.eu/en/rights/privacy-policy
-    type: PrivacyPolicy
-  - url: https://pro.europeana.eu/about-us/office-employees
-    type: Contact
-  - url: https://pro.europeana.eu/page/api-libraries-and-plugins
-    type: Libraries
-  - url: https://github.com/europeana/api2/releases/
-    type: ChangeLog
-  - url: https://pro.europeana.eu/page/record#get-started
-    type: GettingStarted
-  - url: https://pro.europeana.eu/pages/get-api
-    type: Signup
+- type: Website
+  url: https://europeana.eu
+- type: IssueTracker
+  url: https://github.com/europeana/api2/issues
+- type: License
+  name: EUPL-1.2
+  url: https://github.com/europeana/api2/blob/develop/LICENSE
+- type: AgenticAccess
+  url: agentic-access/europeana-agentic-access.yml
+- type: DomainSecurity
+  url: security/europeana-domain-security.yml
+- type: Authentication
+  url: authentication/europeana-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/europeana
+- url: https://pro.europeana.eu/
+  type: Portal
+- url: https://pro.europeana.eu/page/news
+  type: News
+- url: https://pro.europeana.eu/page/events
+  type: Events
+- url: https://www.europeana.eu/en/rights
+  type: TermsOfService
+- url: https://www.europeana.eu/en/rights/privacy-policy
+  type: PrivacyPolicy
+- url: https://pro.europeana.eu/about-us/office-employees
+  type: Contact
+- url: https://pro.europeana.eu/page/api-libraries-and-plugins
+  type: Libraries
+- url: https://github.com/europeana/api2/releases/
+  type: ChangeLog
+- url: https://pro.europeana.eu/page/record#get-started
+  type: GettingStarted
+- url: https://pro.europeana.eu/pages/get-api
+  type: Signup
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
