@@ -45,9 +45,18 @@ tags:
 - Archives
 - Cultural Heritage
 - Europe
+- Library
+- Museums
+- Search
+- OAI-PMH
+tags_raw:
+- Archives
+- Cultural Heritage
+- Europe
 - Libraries
 - Museums
 - Search
+- OAI-PMH
 apis:
 - aid: europeana:europeana-record-api
   name: Europeana Record API
