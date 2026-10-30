@@ -1,4 +1,4 @@
-# Europeana (europeana)
+# Europeana
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,69 +66,121 @@
 
 Europeana empowers the cultural heritage sector in its digital transformation. It develops expertise, tools, and policies to embrace digital change and encourage partnerships that foster innovation, making it easier for people to use cultural heritage for education, research, creation, and recreation. The Europeana platform aggregates metadata for over 50 million digitized items from more than 3,500 cultural institutions across Europe and exposes them through public APIs.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/europeana/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/europeana/refs/heads/main/apis.yml)
+**Areas:** Archives · Cultural Heritage · Europe · Library · Museums · Search · OAI-PMH
 
-## Scope
+## Europeana on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Europeana is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/europeana/](https://apis.io/providers/europeana/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Archives
-- Cultural Heritage
-- Europe
-- Libraries
-- Museums
-- Search
+- [Europeana Record API](https://apis.io/apis/europeana/europeana-record-api/) — Retrieve full metadata for a single record
+- [Europeana Search API](https://apis.io/apis/europeana/europeana-search-api/) — Discover records via keyword, faceted, and filtered search
 
-## Timestamps
+### Published properties
 
-- **Created:** 2023-11-23
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Europeana Search and Record API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Europeana Search and Record API exposes the federated catalog of over 50 million cultural heritage items aggregated from European museums, libraries, archives, and audiovisual collections. The Search endpoint supports keyword, facet, and filter queries; the Record endpoint returns the full EDM metadata for a single object.
+- [Europeana Agentic Access](https://apis.io/agentic-access/europeana/europeana-agentic-access/)
 
-- **Human URL:** [https://pro.europeana.eu/page/intro](https://pro.europeana.eu/page/intro)
-- **Base URL:** `https://api.europeana.eu/record/v2`
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Cultural Heritage
-- Museums
-- Search
-- Records
+- [Europeana Search and Record API](https://apis.io/collections/europeana/open-europeana/)
+- [Europeana Search and Record API](https://apis.io/collections/europeana/open-europeana-record-api/)
+- [Europeana and Record Search API](https://apis.io/collections/europeana/open-europeana-search-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://pro.europeana.eu/page/apis)
-- [Console](https://pro.europeana.eu/page/api-rest-console)
-- [Sign Up](https://pro.europeana.eu/pages/get-api)
-- [Source Code](https://github.com/europeana/api2)
-- [OpenAPI](openapi/europeana-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/europeana.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/europeana.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Europeana Authentication](https://apis.io/security/europeana/europeana-authentication/)
+- [Europeana Domain Security](https://apis.io/security/europeana/europeana-domain-security/)
 
-- [LinkedIn](https://www.linkedin.com/company/europeana)
-- [Portal](https://pro.europeana.eu/)
-- [News](https://pro.europeana.eu/page/news)
-- [Events](https://pro.europeana.eu/page/events)
-- [Terms of Service](https://www.europeana.eu/en/rights)
-- [Privacy Policy](https://www.europeana.eu/en/rights/privacy-policy)
-- [Contact](https://pro.europeana.eu/about-us/office-employees)
-- [Libraries](https://pro.europeana.eu/page/api-libraries-and-plugins)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Europeana Plans Pricing](https://apis.io/plans/europeana/europeana-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Europeana Rate Limits](https://apis.io/rate-limits/europeana/europeana-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Europeana Finops](https://apis.io/finops/europeana/europeana-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://europeana.eu)
+- [Getting started](https://pro.europeana.eu/page/record#get-started)
 - [Changelog](https://github.com/europeana/api2/releases/)
-- [Getting Started](https://pro.europeana.eu/page/record#get-started)
-- [Sign Up](https://pro.europeana.eu/pages/get-api)
+- [Terms of service](https://www.europeana.eu/en/rights)
+- [Privacy policy](https://www.europeana.eu/en/rights/privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 41.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.9 |
+| Contract quality | 48.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 42.1 |
+
+**Agent readiness 19.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 19.6** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/europeana/](https://apis.io/providers/europeana/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Europeana: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/europeana/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
